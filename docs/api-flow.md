@@ -176,3 +176,4 @@ Next Conversation
 API authentication is handled through n8n credentials and runtime environment configuration.
 
 The repository contains workflow definitions and sanitized configuration only; production authentication material must be configured in the deployed n8n instance.
+

@@ -92,3 +92,4 @@ Anything NOT clearly about our products, business, or an order — including:
 Only classify as `Product_Query`, `Catalogue`, `Professional`, `Appreciation`, or `Post_Purchase` if the message is **CLEARLY and SPECIFICALLY** about our terracotta/jewelry products or business.
 
 **When in doubt, respond `Unknown`. Do not guess.**
+

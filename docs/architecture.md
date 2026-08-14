@@ -2,7 +2,7 @@
 
 ## Overview
 
-AkshayKala Smart DM is an Instagram DM automation workflow built around self-hosted n8n, the Meta Graph API, and an LLM-based intent classification layer.
+Instagram DM Automation is an Instagram DM automation workflow built around self-hosted n8n, the Meta Graph API, and an LLM-based intent classification layer.
 
 The system periodically checks Instagram conversations for new activity, retrieves relevant messages, classifies customer intent, routes the message to the corresponding response branch, and sends the selected response back through Instagram's messaging API.
 
@@ -134,3 +134,4 @@ This chain is independent of the main 5-minute DM polling path.
 Production credentials are not stored as plain values in the repository. The workflow references n8n credentials and environment variables for the required authentication material.
 
 The repository contains the workflow definition and sanitized configuration examples; credentials must be configured in the target n8n environment before execution.
+

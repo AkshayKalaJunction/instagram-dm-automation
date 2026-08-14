@@ -1,10 +1,10 @@
-# AkshayKala Smart DM
+# Instagram DM Automation
 
 Automated Instagram DM classification and response workflow for AkshayKala, built with **n8n**, the **Meta Graph API**, and **LLM-based intent classification**.
 
 ## Overview
 
-AkshayKala Smart DM is an Instagram DM automation system designed to identify new customer messages, understand their intent, route them to the appropriate response path, and send a relevant reply through Instagram's messaging API.
+Instagram DM Automation is an Instagram DM automation system designed to identify new customer messages, understand their intent, route them to the appropriate response path, and send a relevant reply through Instagram's messaging API.
 
 The workflow is designed around a scheduled polling model and processes conversations incrementally rather than repeatedly processing the complete conversation history.
 
@@ -203,5 +203,6 @@ See the `docs/` directory for the detailed project documentation.
 
 ---
 
-**AkshayKala Smart DM**  
+**Instagram DM Automation**  
 Instagram DM Automation — AkshayKala
+

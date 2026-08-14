@@ -20,3 +20,4 @@ docker compose up -d
 9. Test the workflow before activation.
 
 Production secrets must not be committed to Git.
+

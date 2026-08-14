@@ -2,7 +2,7 @@
 
 ## Deployment Overview
 
-AkshayKala Smart DM is designed to run as a self-hosted n8n workflow deployed on a Google Cloud VM using Docker.
+Instagram DM Automation is designed to run as a self-hosted n8n workflow deployed on a Google Cloud VM using Docker.
 
 ```text
 Google Cloud VM
@@ -11,7 +11,7 @@ Google Cloud VM
        ↓
 Self-hosted n8n
        ↓
-AkshayKala Smart DM Workflow
+Instagram DM Automation Workflow
 ```
 
 ## Deployment Components
@@ -119,3 +119,4 @@ The separate token-refresh chain runs independently according to its configured 
 - Configure credentials directly in the target n8n environment.
 - Maintain persistent n8n data independently from the Git repository.
 - Test the workflow before enabling automated execution.
+

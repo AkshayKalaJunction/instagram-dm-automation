@@ -111,3 +111,4 @@ Unknown        → No supported intent branch
 ```
 
 The workflow's router contains explicit branches for the five supported response categories.
+
