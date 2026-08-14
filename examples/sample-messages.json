@@ -1,0 +1,26 @@
+[
+  {
+    "message": "How much are the terracotta earrings?",
+    "expected_intent": "Product_Query"
+  },
+  {
+    "message": "Can I see your full catalogue?",
+    "expected_intent": "Catalogue"
+  },
+  {
+    "message": "I'd like to collaborate with your brand",
+    "expected_intent": "Professional"
+  },
+  {
+    "message": "These are absolutely gorgeous, thank you!",
+    "expected_intent": "Appreciation"
+  },
+  {
+    "message": "When will my order arrive?",
+    "expected_intent": "Post_Purchase"
+  },
+  {
+    "message": "Do you know a great pizza place?",
+    "expected_intent": "Unknown"
+  }
+]

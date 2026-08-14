@@ -1,0 +1,8 @@
+{
+  "Product_Query": "Product/pricing information response branch",
+  "Catalogue": "Catalogue or collection response branch",
+  "Professional": "Professional enquiry response branch",
+  "Appreciation": "Appreciation response branch",
+  "Post_Purchase": "Post-purchase support response branch",
+  "Unknown": "No supported intent branch"
+}

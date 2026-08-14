@@ -1,0 +1,1197 @@
+{
+  "name": "Instagram DM Automation Workflow Final Version",
+  "nodes": [
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{$json.intent}}",
+                    "rightValue": "Product_Query",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e93d7d99-1f30-4b9a-b3dd-0a029cc81cf4"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "c9125b93-5d27-4672-bd79-a9462bb8d98b",
+                    "leftValue": "={{$json.intent}}",
+                    "rightValue": "Catalogue",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "99858d3a-beec-429a-b885-1919c8aed97f",
+                    "leftValue": "={{$json.intent}}",
+                    "rightValue": "Professional",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "efb88d36-5a8a-475c-a9bd-d9713fa167ec",
+                    "leftValue": "={{$json.intent}}",
+                    "rightValue": "Appreciation",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 3
+                },
+                "conditions": [
+                  {
+                    "id": "ed516de3-3f73-4a60-bd87-6cadcd6f7f31",
+                    "leftValue": "={{$json.intent}}",
+                    "rightValue": "Post_Purchase",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.4,
+      "position": [
+        352,
+        816
+      ],
+      "id": "5933f1a1-5606-412d-823a-618062795aef",
+      "name": "intent router"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2fcf2831-f2e6-496b-91c1-701114a4c9a3",
+              "name": "reply",
+              "value": "Thanks for reaching out! You can find everything about our products - pricing, materials, and more here: \\nhttps://YOUR_STORE_DOMAIN/  \\n \\nNote: Namaste! Our development team is currently experimenting with a few workflows with Meta. If your query requires further assistance, a member of our team will get in touch with you shortly. Thank you for your patience and understanding.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        576
+      ],
+      "id": "53734824-0680-43ae-8423-c7cad20844dc",
+      "name": "product reply"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "f292b84a-1faf-49b2-b8b6-8759e72efdbc",
+              "name": "reply",
+              "value": "Here's our catalogue. \\nhttps://YOUR_STORE_DOMAIN/catalogue \\n\\nNOTE: Namaste! Thank you for reaching out. Our development team is currently experimenting few workflows with Meta. If your query requires further assistance, a member of our team will get in touch with you shortly. Thank you for your patience and understanding.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        768
+      ],
+      "id": "98e86bde-ad56-42fe-828c-1f76d3aa728d",
+      "name": "catalogue"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "d38f37dc-914a-477e-b1e3-b67bff22e073",
+              "name": "reply",
+              "value": "Thanks for reaching out! For collaborations and business inquiries, please contact us at YOUR_SUPPORT_EMAIL or call YOUR_SUPPORT_PHONE. We're available Mon–Fri 9am–7pm and Sat–Sun 10am–6pm. \\n\\nNOTE: Namaste! Thank you for reaching out. Our development team is currently experimenting few workflows with Meta. If your query requires further assistance, a member of our team will get in touch with you shortly. Thank you for your patience and understanding.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        960
+      ],
+      "id": "715d0015-9e8b-4ebd-b420-612f60e39c10",
+      "name": "professional"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2d36ee03-17af-4f72-bf99-c58e2f9c903b",
+              "name": "reply",
+              "value": "Thank you so much for your kind words! It truly means a lot to us. 🧡 \\n\\nNOTE: Namaste! Thank you for reaching out. Our development team is currently experimenting few workflows with Meta. If your query requires further assistance, a member of our team will get in touch with you shortly. Thank you for your patience and understanding.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        1152
+      ],
+      "id": "cd202b8e-0c6d-41ff-a5ee-a99f741d692b",
+      "name": "appreciation"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "4e70a255-1b5f-49f6-a452-b7f769bb62b3",
+              "name": "reply",
+              "value": "For any questions about your order - shipping, returns, or order status - please reach out to us at:\\nYOUR_SUPPORT_EMAIL \\n\\nNOTE: Namaste! Thank you for reaching out. Our development team is currently experimenting few workflows with Meta. If your query requires further assistance, a member of our team will get in touch with you shortly. Thank you for your patience and understanding.",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        576,
+        1344
+      ],
+      "id": "2a2b13a2-9d0c-4ffa-8e0c-3eeaeebf32e3",
+      "name": "post purchase"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 5
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1664,
+        1728
+      ],
+      "id": "ab48d73a-630c-47e5-bc9c-81db6d55c637",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "amount": 7
+      },
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        -320,
+        864
+      ],
+      "id": "240c1faa-1c59-4987-8851-28c5ea9dc517",
+      "name": "Wait",
+      "webhookId": "REDACTED"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "ac13fae4-5d54-40c3-88fe-1f9280a6b4cb",
+              "name": "prompt",
+              "value": "## Role You are an intent classifier for **AkshayKala Junction**, a store selling handmade terracotta and biodegradable jewelry. Classify the customer message into **EXACTLY ONE** of the categories below. Respond with **ONLY the category name**, nothing else.  ## Valid Categories - `Product_Query` - `Catalogue` - `Professional` - `Appreciation` - `Post_Purchase` - `Unknown`  ## Category Definitions  **Product_Query** Questions about specific products, pricing, availability, authenticity, general \"show me your products/link\" requests, or shipping time for a product not yet ordered.  **Catalogue** Explicit requests to see the FULL range/catalogue/collection/recommendations as a browsable list, requests for recommendations, or requests for an exclusive/special product list — not just \"the link\" to the main site.  **Professional** Collaboration, partnership, business, or press inquiries. Also includes requests to join the team or learn a skill.  **Appreciation** Compliments, thanks, or praise about products or the brand, with no other request attached.  **Post_Purchase** Issues with an order ALREADY placed — shipping status, delays, returns, order not arrived.  **Unknown** Anything NOT clearly about our products, business, or an order — including: - Small talk / greetings with no follow-up - Questions about unrelated topics (music, movies, other brands, random chit-chat) - Trust/legitimacy questions (\"are you scammers?\", \"is this a scam\", \"are you legit\") - Anything ambiguous  ## Examples  | Message | Category | |---|---| | \"price of the product\" | `Product_Query` | | \"how much for the terracotta earrings\" | `Product_Query` | | \"is this real terracotta or fake\" | `Product_Query` | | \"what is the shipping time for a product\" | `Product_Query` | | \"please send me your website link\" | `Product_Query` | | \"can you send me the link\" | `Product_Query` | | \"do you have an offline store\" | `Product_Query` | | \"shipping charges alag hai kya\" / \"delivery free hai\" | `Product_Query` | | \"do you have a catalogue?\" | `Catalogue` | | \"can I see your full catalogue\" | `Catalogue` | | \"can I see all your products in one place\" | `Catalogue` | | \"can you recommend me something\" | `Catalogue` | | \"do you have an exclusive list of products\" | `Catalogue` | | \"suggest something nice\" | `Catalogue` | | \"what should I gift my mom\" | `Catalogue` | | \"show me your special collection\" | `Catalogue` | | \"any recommendations\" | `Catalogue` | | \"I'd like to collaborate with your brand\" | `Professional` | | \"I run a sustainability blog, want to collaborate?\" | `Professional` | | \"how can we collab?\" / \"collab interested\" | `Professional` | | \"I would like to join Akshaykala\" / \"can I be a part of the family\" | `Professional` | | \"I want to learn this skill\" / \"can you teach me\" | `Professional` | | \"thank you so much, loved it!\" | `Appreciation` | | \"these are absolutely gorgeous, thank you!\" | `Appreciation` | | \"following your page since 2023, love the growth!\" | `Appreciation` | | \"when will my order arrive?\" | `Post_Purchase` | | \"my order hasn't arrived yet, it's been a week\" | `Post_Purchase` | | \"what is the return policy\" | `Post_Purchase` | | \"its been a week, when will I get my order\" | `Post_Purchase` | | \"I accidentally placed an order by mistake\" | `Post_Purchase` | | \"are you guys scammers?\" / \"is this a scam\" / \"are you legit\" | `Unknown` | | \"have you listened to this song?\" | `Unknown` | | \"hey\" / \"what's up\" / \"lol nice\" / \"nice\" | `Unknown` | | \"app is ko share/comment kariye\" | `Unknown` | | \"I met Muskan before\" | `Unknown` | | \"do you know a great pizza place\" | `Unknown` |  ## Final Rule Only classify as `Product_Query`, `Catalogue`, `Professional`, `Appreciation`, or `Post_Purchase` if the message is **CLEARLY and SPECIFICALLY** about our terracotta/jewelry products or business. **When in doubt, respond `Unknown`. Do not guess.**",
+              "type": "string"
+            }
+          ]
+        },
+        "includeOtherFields": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -96,
+        864
+      ],
+      "id": "36eb93b9-49e4-41b1-9502-c3be7c609860",
+      "name": "Classification Prompt"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const prompt = $('Classification Prompt').item.json.prompt;\nconst customerMessage = $json.text;\nconst fromId = $json.from_id;\nconst fromUsername = $json.from_username;\n\nconst fullPrompt = `${prompt}\\n\\nCustomer Message:\\n${customerMessage}`;\n\nconst GEMINI_API_KEY = $env.GEMINI_API_KEY;\nconst GROQ_API_KEY = $env.GROQ_API_KEY;\nconst MISTRAL_API_KEY = $env.MISTRAL_API_KEY;\n\nconst VALID_INTENTS = ['Appreciation', 'Product_Query', 'Catalogue', 'Professional', 'Post_Purchase'];\n\nfunction normalizeIntent(rawText) {\n  const cleaned = rawText.trim();\n  if (VALID_INTENTS.includes(cleaned)) return cleaned;\n  for (const intent of VALID_INTENTS) {\n    if (cleaned.includes(intent)) return intent;\n  }\n  return 'Unknown';\n}\n\nasync function callGeminiFamily(model, apiKey, text) {\n  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;\n  try {\n    const data = await this.helpers.httpRequest({\n      method: 'POST',\n      url: url,\n      headers: { 'Content-Type': 'application/json' },\n      body: { contents: [{ parts: [{ text }] }] },\n      json: true\n    });\n    const candidate = data?.candidates?.[0]?.content?.parts?.[0]?.text;\n    if (!candidate) return { ok: false, reason: 'empty_candidates' };\n    return { ok: true, text: candidate.trim() };\n  } catch (err) {\n    return { ok: false, reason: err.message };\n  }\n}\n\nasync function callGroq(apiKey, text) {\n  try {\n    const data = await this.helpers.httpRequest({\n      method: 'POST',\n      url: 'https://api.groq.com/openai/v1/chat/completions',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`\n      },\n      body: {\n        model: 'llama-3.3-70b-versatile',\n        messages: [{ role: 'user', content: text }]\n      },\n      json: true\n    });\n    const content = data?.choices?.[0]?.message?.content;\n    if (!content) return { ok: false, reason: 'empty_choices' };\n    return { ok: true, text: content.trim() };\n  } catch (err) {\n    return { ok: false, reason: err.message };\n  }\n}\n\nasync function callMistral(apiKey, text) {\n  try {\n    const data = await this.helpers.httpRequest({\n      method: 'POST',\n      url: 'https://api.mistral.ai/v1/chat/completions',\n      headers: {\n        'Content-Type': 'application/json',\n        'Authorization': `Bearer ${apiKey}`\n      },\n      body: {\n        model: 'mistral-small-latest',\n        messages: [{ role: 'user', content: text }]\n      },\n      json: true\n    });\n    const content = data?.choices?.[0]?.message?.content;\n    if (!content) return { ok: false, reason: 'empty_choices' };\n    return { ok: true, text: content.trim() };\n  } catch (err) {\n    return { ok: false, reason: err.message };\n  }\n}\n\nlet result = await callGeminiFamily.call(this, 'gemini-3.1-flash-lite', GEMINI_API_KEY, fullPrompt);\nlet providerUsed = 'gemini';\nconst debugLog = [`gemini: ${result.ok ? 'OK' : result.reason}`];\n\nif (!result.ok) {\n  result = await callGeminiFamily.call(this, 'gemma-4-26b', GEMINI_API_KEY, fullPrompt);\n  providerUsed = 'gemma';\n  debugLog.push(`gemma: ${result.ok ? 'OK' : result.reason}`);\n}\n\nif (!result.ok) {\n  result = await callGroq.call(this, GROQ_API_KEY, fullPrompt);\n  providerUsed = 'groq';\n  debugLog.push(`groq: ${result.ok ? 'OK' : result.reason}`);\n}\n\nif (!result.ok) {\n  result = await callMistral.call(this, MISTRAL_API_KEY, fullPrompt);\n  providerUsed = 'mistral';\n  debugLog.push(`mistral: ${result.ok ? 'OK' : result.reason}`);\n}\n\nconst finalIntent = result.ok ? normalizeIntent(result.text) : 'Unknown';\n\nreturn {\n  json: {\n    intent: finalIntent,\n    from_id: fromId,\n    from_username: fromUsername,\n    provider_used: result.ok ? providerUsed : 'none',\n    debug: debugLog\n  }\n};"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        128,
+        864
+      ],
+      "id": "2f2cae83-1c23-4fb5-9991-481d015c411f",
+      "name": "LLM FAMILY"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nconst now = new Date().toISOString();\n\n// first run ever: default to 5 minutes ago so it doesn't try to fetch your entire history\nconst lastPollTimestamp = staticData.lastPollTimestamp || new Date(Date.now() - 5 * 60 * 1000).toISOString();\n\nstaticData.lastPollTimestamp = now; // update immediately, so next cycle starts from here\n\nreturn [{ json: { lastPollTimestamp, currentPollTimestamp: now } }];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -1440,
+        1728
+      ],
+      "id": "af5bc15d-ffc9-46b3-aacf-a297dc3d691e",
+      "name": "Get Last Poll Timestamp"
+    },
+    {
+      "parameters": {
+        "url": "https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/conversations",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "participants,updated_time"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -1216,
+        1728
+      ],
+      "id": "00d32152-871e-4a1c-8861-36fdf2752cc7",
+      "name": "List Changed Conversations",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const lastPoll = new Date($('Get Last Poll Timestamp').first().json.lastPollTimestamp).getTime();\nconst conversations = $input.first().json.data || [];\n\nconst active = conversations.filter(c => {\n  const updated = new Date(c.updated_time).getTime();\n  return updated > lastPoll;\n});\n\nreturn active.map(c => ({ json: c }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -992,
+        1728
+      ],
+      "id": "0693f786-c5f1-47f4-8aca-24baa206cd6c",
+      "name": "Filter Active Conversations"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        -768,
+        1728
+      ],
+      "id": "31fa512f-b240-4ba1-b340-299c6669b9ee",
+      "name": "Process Conversations Loop"
+    },
+    {
+      "parameters": {
+        "url": "=https://graph.instagram.com/v21.0/{{ $json.id }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "fields",
+              "value": "messages{message,from,created_time}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -544,
+        1344
+      ],
+      "id": "0059737c-878e-4ddf-a8a4-6ae483493cee",
+      "name": "Fetch Conversation Messages",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const MY_ACCOUNT_ID = 'YOUR_INSTAGRAM_BUSINESS_ACCOUNT_ID'; // akshaykala_ official account ID\nconst staticData = $getWorkflowStaticData('global');\nconst now = Date.now();\nconst LOCK_DURATION_MS = 20000;\n\nif (staticData.lockedUntil && now < staticData.lockedUntil) {\n  return [];\n}\nstaticData.lockedUntil = now + LOCK_DURATION_MS;\n\nconst lastChecked = new Date(staticData.lastChecked || 0);\n\nif (!staticData.processedMessageIds) {\n  staticData.processedMessageIds = [];\n}\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\n\nconst processedIds = new Set(staticData.processedMessageIds);\nconst repliedIds = new Set(staticData.repliedMessageIds);\n\n// Loop Over Items sends ONE conversation per execution now, not a bulk array\nconst items = $input.all();\nlet newMessages = [];\nlet latestTime = lastChecked;\n\nfor (const item of items) {\n  const convo = item.json;\n  const messages = convo.messages?.data || [];\n\n  for (const msg of messages) {\n    const msgTime = new Date(msg.created_time);\n    const isNewByTime = msgTime > lastChecked;\n    const isAlreadyProcessed = processedIds.has(msg.id);\n    const isAlreadyReplied = repliedIds.has(msg.id);\n    const isFromCustomer = msg.from.id !== MY_ACCOUNT_ID;\n\n    if (isNewByTime && !isAlreadyProcessed && !isAlreadyReplied && isFromCustomer) {\n      newMessages.push({\n        conversation_id: convo.id,\n        message_id: msg.id,\n        text: msg.message,\n        from_username: msg.from.username,\n        from_id: msg.from.id,\n        created_time: msg.created_time\n      });\n      processedIds.add(msg.id);\n      if (msgTime > latestTime) {\n        latestTime = msgTime;\n      }\n    } else if (isNewByTime && !isFromCustomer) {\n      processedIds.add(msg.id);\n    }\n  }\n}\n\nstaticData.lastChecked = latestTime.toISOString();\nstaticData.processedMessageIds = Array.from(processedIds).slice(-500);\nstaticData.repliedMessageIds = Array.from(repliedIds).slice(-500);\n\nreturn newMessages.map(m => ({ json: m }));"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -544,
+        864
+      ],
+      "id": "17f344a7-4348-4eae-abfb-0bbe5f485c13",
+      "name": "Filter Unprocessed Messages"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\nconst repliedSet = new Set(staticData.repliedMessageIds);\n\nif (repliedSet.has($json.message_id)) {\n  return [];\n}\n\nrepliedSet.add($json.message_id);\nstaticData.repliedMessageIds = Array.from(repliedSet).slice(-500);\n\nreturn [$input.item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        576
+      ],
+      "id": "42fce5bb-fb8f-40b4-9590-c47c80545169",
+      "name": "Format Product Reply"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\nconst repliedSet = new Set(staticData.repliedMessageIds);\n\nif (repliedSet.has($json.message_id)) {\n  return [];\n}\n\nrepliedSet.add($json.message_id);\nstaticData.repliedMessageIds = Array.from(repliedSet).slice(-500);\n\nreturn [$input.item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        768
+      ],
+      "id": "b1a0e150-f72c-42cc-924c-22436f9a08b8",
+      "name": "Format Catalogue Reply"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\nconst repliedSet = new Set(staticData.repliedMessageIds);\n\nif (repliedSet.has($json.message_id)) {\n  return [];\n}\n\nrepliedSet.add($json.message_id);\nstaticData.repliedMessageIds = Array.from(repliedSet).slice(-500);\n\nreturn [$input.item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        960
+      ],
+      "id": "4e026c2d-121d-4e75-b9c6-aa54d250d2a9",
+      "name": "Format Professional Reply"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\nconst repliedSet = new Set(staticData.repliedMessageIds);\n\nif (repliedSet.has($json.message_id)) {\n  return [];\n}\n\nrepliedSet.add($json.message_id);\nstaticData.repliedMessageIds = Array.from(repliedSet).slice(-500);\n\nreturn [$input.item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1152
+      ],
+      "id": "cf32d1b7-98ba-421d-acbe-36f9b9d65e1c",
+      "name": "Format Appreciation Reply"
+    },
+    {
+      "parameters": {
+        "jsCode": "const staticData = $getWorkflowStaticData('global');\nif (!staticData.repliedMessageIds) {\n  staticData.repliedMessageIds = [];\n}\nconst repliedSet = new Set(staticData.repliedMessageIds);\n\nif (repliedSet.has($json.message_id)) {\n  return [];\n}\n\nrepliedSet.add($json.message_id);\nstaticData.repliedMessageIds = Array.from(repliedSet).slice(-500);\n\nreturn [$input.item];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        800,
+        1344
+      ],
+      "id": "18084e34-66c6-46b7-90ad-7f26ac49908d",
+      "name": "Format Post-Purchase Reply"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $json.from_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.reply }}\"\n    \n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1024,
+        1040
+      ],
+      "id": "42e7cd41-5f85-4598-8141-d01340f66aac",
+      "name": "Send Product Reply",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $json.from_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.reply }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1024,
+        1232
+      ],
+      "id": "572dc159-5184-4b46-8a43-f8a47528e9b3",
+      "name": "Send Catalogue Reply",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $json.from_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.reply }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1024,
+        1424
+      ],
+      "id": "34ce77d5-f56b-4ffe-8680-2556432ea57e",
+      "name": "Send Professional Reply",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $json.from_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.reply }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1024,
+        1616
+      ],
+      "id": "56a6207c-9379-4773-9e5b-21b8ec1b7018",
+      "name": "Send Appreciation Reply",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.instagram.com/v21.0/YOUR_INSTAGRAM_ACCOUNT_ID/messages",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $json.from_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.reply }}\"\n  }\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1024,
+        1808
+      ],
+      "id": "ccdfdccd-4f92-4764-9091-c8f8041adf1d",
+      "name": "Send Post-Purchase Reply",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "weeksInterval": 8
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1664,
+        352
+      ],
+      "id": "de7effc7-8e0f-457f-826e-5edfcf8f793f",
+      "name": "Schedule Trigger1"
+    },
+    {
+      "parameters": {
+        "url": "https://graph.instagram.com/refresh_access_token",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "grant_type",
+              "value": "ig_refresh_token"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -1440,
+        352
+      ],
+      "id": "6fe87d50-db61-4b21-a6bb-ac1ad5af6cb8",
+      "name": "HTTP Request",
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "Meta API Credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "http://localhost:5678/api/v1/credentials/YOUR_CREDENTIAL_ID",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"data\": {\n    \"value\": \"{{ $json.access_token }}\"\n  },\n  \"isPartialData\": true\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        -1216,
+        352
+      ],
+      "id": "8615df57-6ce1-4a62-ba70-c93c36f3cf35",
+      "name": "HTTP Request1",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "YOUR_CREDENTIAL_ID",
+          "name": "n8n Credential API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "FETCH & FILTER\nRuns every 5 min. Pulls the list of conversations,\nkeeps only the ones with new activity since last\ncheck (avoids re-fetching everything every cycle),\nthen loops through them one at a time.",
+        "width": 432
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1360,
+        1472
+      ],
+      "typeVersion": 1,
+      "id": "b3a851b0-61a8-4532-b805-fad33171cd0a",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "CLASSIFY\nPulls the real messages for one conversation, filters\nout anything already replied to or sent by us, then\nsends genuinely new customer messages to the LLM to\nfigure out what they're asking for (price, catalogue,\nsupport, etc.) and picks the right reply branch.",
+        "height": 192,
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -272,
+        624
+      ],
+      "typeVersion": 1,
+      "id": "35793601-902e-430d-a679-9eae360795bc",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "content": "REPLY\nOne branch per intent. Formats the right templated\nreply, sends it via Instagram's official Messaging\nAPI, then loops back to process the next conversation\nin the batch.",
+        "width": 448
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1216,
+        1424
+      ],
+      "typeVersion": 1,
+      "id": "b4a7304f-7007-44c9-a2bb-ae0ff263610c",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "Schedule Trigger (every 6 weeks)\n  ├──▶ Refresh IG Token → Update n8n Credential   (existing chain)\n  └──▶ Send Reminder Email   (NEW, parallel branch)",
+        "height": 96,
+        "width": 528
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1552,
+        560
+      ],
+      "typeVersion": 1,
+      "id": "73ae4c95-537d-496e-a442-53a247cc7f39",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "fromEmail": "YOUR_SENDER_EMAIL",
+        "toEmail": "YOUR_REMINDER_EMAIL",
+        "subject": "Instagram DM Automation — Token Refresh Check-in",
+        "html": "<p>Hi Abhay,</p>\n\n<p>This is an automated check-in from the Instagram DM automation workflow.</p>\n\n<p>The token auto-refresh has been running on its 6-week schedule. Please confirm when convenient:</p>\n<ul>\n  <li>The workflow is still active in n8n</li>\n  <li>No auth errors have appeared in recent logs</li>\n  <li>The Instagram Business token is current</li>\n</ul>\n\n<p>This reminder fires automatically every 8 weeks regardless of refresh success or failure — it's a routine nudge, not a failure alert.</p>\n\n<p>— Automated reminder, Instagram DM Automation system</p>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2.1,
+      "position": [
+        -992,
+        352
+      ],
+      "id": "d60e17d2-53b0-4ebb-ac61-bcb983073906",
+      "name": "Send an Email",
+      "webhookId": "REDACTED",
+      "credentials": {
+        "smtp": {
+          "id": "C39c1Atj1ZNnTWZZ",
+          "name": "SMTP Credential"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "intent router": {
+      "main": [
+        [
+          {
+            "node": "product reply",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "catalogue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "professional",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "appreciation",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "post purchase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "product reply": {
+      "main": [
+        [
+          {
+            "node": "Format Product Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "catalogue": {
+      "main": [
+        [
+          {
+            "node": "Format Catalogue Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "professional": {
+      "main": [
+        [
+          {
+            "node": "Format Professional Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "appreciation": {
+      "main": [
+        [
+          {
+            "node": "Format Appreciation Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "post purchase": {
+      "main": [
+        [
+          {
+            "node": "Format Post-Purchase Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Last Poll Timestamp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait": {
+      "main": [
+        [
+          {
+            "node": "Classification Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classification Prompt": {
+      "main": [
+        [
+          {
+            "node": "LLM FAMILY",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "LLM FAMILY": {
+      "main": [
+        [
+          {
+            "node": "intent router",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Last Poll Timestamp": {
+      "main": [
+        [
+          {
+            "node": "List Changed Conversations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "List Changed Conversations": {
+      "main": [
+        [
+          {
+            "node": "Filter Active Conversations",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Active Conversations": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Conversations Loop": {
+      "main": [
+        [
+          {
+            "node": "Filter Unprocessed Messages",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Fetch Conversation Messages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch Conversation Messages": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Unprocessed Messages": {
+      "main": [
+        [
+          {
+            "node": "Wait",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Product Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Product Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Catalogue Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Catalogue Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Professional Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Professional Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Appreciation Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Appreciation Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format Post-Purchase Reply": {
+      "main": [
+        [
+          {
+            "node": "Send Post-Purchase Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Product Reply": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Catalogue Reply": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Professional Reply": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Appreciation Reply": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Post-Purchase Reply": {
+      "main": [
+        [
+          {
+            "node": "Process Conversations Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Schedule Trigger1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Send an Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "REDACTED",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "REDACTED"
+  },
+  "nodeGroups": [],
+  "id": "REDACTED",
+  "tags": []
+}
