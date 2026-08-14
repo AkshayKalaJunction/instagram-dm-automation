@@ -1,4 +1,4 @@
-# Instagram DM Automation
+# AkshayKala AI Studio: Instagram DM Automation
 
 Automated Instagram DM classification and response workflow for AkshayKala, built with **n8n**, the **Meta Graph API**, and **LLM-based intent classification**.
 
